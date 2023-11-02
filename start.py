@@ -3,11 +3,8 @@ from bs4 import BeautifulSoup
 
 # Функция для выполнения поиска с использованием Google Dork
 def google_dork_search(query):
-    # Замените `ваш_ключ_API` на ваш ключ API, если используете его
-    #url = f'https://www.googleapis.com/customsearch/v1?key=ваш_ключ_API&cx=ваш_пользовательский_идентификатор_cx&q={query}'
 
-    # Если вы не используете ключ API, вы можете отправить запрос напрямую
-    url = f'https://www.google.com/search?q={query}'
+    url = f'https://www.google.com/search?q=filetype:pdf+{query}'
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
     }
@@ -24,11 +21,14 @@ def google_dork_search(query):
             link = result.a['href']
             print(f'Title: {title}')
             print(f'Link: {link}')
-            print('---')
+            print('----------------------------------------------------------------------------------------')
 
     except requests.exceptions.RequestException as e:
-        print(f'Error: {e}')
+        print(f'Произошла ошибка при выполнении запроса: {e}')
+
+    except Exception as e:
+        print(f'Произошла ошибка: {e}')
 
 if __name__ == "__main__":
-    user_query = input("Введите запрос для поиска: ")
+    user_query = input("Введите ключ-слово для поиска: ")
     google_dork_search(user_query)
