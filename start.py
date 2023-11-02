@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import logging
 
 # Настройка логирования
-logging.basicConfig(filename='google_dork_search.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', filemode='w')
+logging.basicConfig(filename='google_dork_search.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', filemode='a')
 
 # Функция для выполнения поиска с использованием Google Dork
 def google_dork_search(query):
