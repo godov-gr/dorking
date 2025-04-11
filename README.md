@@ -11,7 +11,7 @@
 
 ---
 
-## 🚀 Быстрый старт
+## 🚀 Запуск
 
 ```bash
 git clone https://github.com/yourusername/dorking.git
